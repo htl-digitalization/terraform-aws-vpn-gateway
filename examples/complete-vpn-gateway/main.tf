@@ -41,7 +41,6 @@ resource "aws_customer_gateway" "main" {
 
 
 resource "aws_instance" "foo" {
-  name = "test ec2 vpn in private subnet"
   ami           = "ami-007cfa135d2f26f76"
   instance_type = "t2.micro"
   vpc_security_group_ids = var.ec2_sg_group
@@ -56,6 +55,7 @@ resource "aws_instance" "foo" {
   }
 
   tags = {
+    Name = "test-vpn-instance"
     Project = "TestVPN"
   } 
 
